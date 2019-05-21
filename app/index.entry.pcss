@@ -1,0 +1,545 @@
+body {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Droid Sans","Helvetica Neue",Arial,sans-serif;
+  min-width: 320px;
+  background-color: #1d1d1d;
+  @media (--lg) {
+    overflow-x: hidden;
+  }
+}
+
+:root {
+  --highlight-color: #c8ff00;
+  --secondary-highlight-color: #6516b5;
+  --dim-color: #696969;
+  --gray-color: #afb1b3;
+}
+
+.example-for-breakpoints {
+  @media (--xlg) {
+    color: blue;
+  }
+
+  @media (--lg) {
+    color: green;
+  }
+
+  @media (--md) {
+    color: white;
+  }
+
+  @media (--sm) {
+    color: black;
+  }
+
+  color: red;
+}
+
+.link {
+  --link-color: var(--highlight-color);
+
+  outline: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  border-bottom: 1px solid transparent
+}
+
+.link, .link:hover {
+  text-decoration: none;
+  color: var(--link-color)
+}
+
+.link:hover {
+  border-bottom-color: var(--link-color)
+}
+
+.link:active, .link:focus {
+  color: var(--link-color)
+}
+
+.text-1 {
+  letter-spacing: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(39, 40, 44, .7);
+
+  &_theme_dark {
+    color: hsla(0, 0%, 100%, .6);
+  }
+}
+
+.main{
+  position: relative;
+  background: #1d1d1d;
+  z-index: 1;
+}
+
+.getInTouch{
+  background: white;
+  width: 118%;
+  margin-left: -10%;
+  @media (--lg) {
+    margin-left: -20%;
+    width: 138%;
+  }
+}
+
+.headerImage {
+  position: relative;
+  margin-left: 5%;
+  height: 450px;
+}
+
+.trusted{
+  position: absolute;
+  top: 420px;
+  left: 24.5%;
+}
+
+.headerLogo {
+  position: relative;
+  height: 45px;
+  top: -12px;
+  @media (--sm) {
+    margin-top: 20%;
+  }
+}
+
+.headerLet {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 13pt;
+  color: #ffffff;
+}
+
+.det{
+  color: #eaeaeb;
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 160%
+}
+
+.unlock{
+  font-family: sans-serif;
+  font-size: 28pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+
+.unlockRow{
+  position: relative;
+  margin-left: 10%;
+}
+
+.getRow{
+  position: relative;
+  margin-left: 8%;
+}
+
+.cardRow{
+  position: relative;
+  margin-left: 7.8%;
+}
+
+.unlockImg{
+  position: relative;
+  margin-right: 9%;
+}
+
+#code{
+  @media (--md) {
+    margin-bottom: 40px;
+  }
+}
+
+#refactoring{
+  margin-top: 10px;
+}
+.ref{
+  position: relative;
+  margin-top: 30px;
+}
+
+.gen{
+  position: relative;
+  margin-top: 28px;
+}
+
+.code{
+  position: relative;
+  margin-top: 35px;
+}
+
+#card1 {
+  width: 210px;
+  height: 300px;
+  border-radius: 10%;
+  background: url(static/img/card/game_pers_unity_disabled.svg) no-repeat 65% 40%, url(static/img/card/Unity.svg) no-repeat 5% 3%;
+  background-size: 70%, 18%;
+  border: 1px #696969 solid;
+  @media (--lg) {
+    margin-bottom: 20%;
+  }
+}
+
+#card1:hover {
+  background: url(static/img/card/game_pers_unity.svg) no-repeat 65% 40%,
+  url(static/img/card/Unity_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;
+  background-size: 70%, 18%, 17%;
+  border: 1px #d6fa3b solid;
+  @media (--lg) {
+    margin-bottom: 20%;
+  }
+}
+
+#card2 {
+  width: 210px;
+  height: 300px;
+  border-radius: 10%;
+  background: url(static/img/card/game_pers_unreal_disabled.svg) no-repeat 65% 50%, url(static/img/card/Unreal.svg) no-repeat 5% 3%;
+  background-size: 80%, 18%;
+  border: 1px #696969 solid;
+  @media (--lg) {
+    margin-bottom: 20%;
+  }
+}
+
+#card2:hover {
+  background: url(static/img/card/game_pers_unreal.svg) no-repeat 65% 50%,
+  url(static/img/card/Unreal_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;
+  background-size: 80%, 18%, 17%;
+  border: 1px #d6fa3b solid;
+  @media (--lg) {
+    margin-bottom: 20%;
+  }
+}
+
+#card3 {
+  width: 210px;
+  height: 300px;
+  border-radius: 10%;
+  background: url(static/img/card/game_pers_mobile_disabled.svg) no-repeat 65% 40%, url(static/img/card/Mobile.svg) no-repeat 5% 3%;
+  background-size: 75%, 18%;
+  border: 1px #696969 solid;
+  
+}
+
+
+#card3:hover {
+  background: url(static/img/card/game_pers_mobile.svg) no-repeat 65% 40%, url(static/img/card/Mobile_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;
+  background-size: 75%, 18%, 17%;
+  border: 1px #d6fa3b solid;
+  
+}
+
+#card4 {
+  width: 210px;
+  height: 300px;
+  border-radius: 10%;
+  background: url(static/img/card/game_pers_casual_disabled.svg) no-repeat 65% 45%, url(static/img/card/Casual.svg) no-repeat 5% 3%;
+  background-size: 75%, 18%;
+  border: 1px #696969 solid;
+  
+
+}
+
+#card4:hover {
+  background: url(static/img/card/game_pers_casual.svg) no-repeat 65% 45%,
+  url(static/img/card/Casual_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;
+  background-size: 75%, 18%, 17%;
+  border: 1px #d6fa3b solid;
+}
+
+.desc{
+  margin-left: 10%;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 13pt;
+  color: #ffffff;
+}
+
+#Resharper{
+  height: 45px;
+  padding-bottom: 55px;
+  @media (--md) {
+    padding-bottom: 127px;
+  }
+}
+
+.details{
+  color: #eaeaeb;
+  font-size: 9pt;
+  font-weight: 300;
+  line-height: 150%
+}
+
+.disabledDesc{
+  margin-left: 10%;
+  color: #eaeaeb;
+  font-size: 13pt;
+  font-weight: 300;
+  line-height: 140%
+}
+
+.menu{
+  position: absolute;
+  top: 15%;
+  left: -16%;
+  @media (--lg) {
+    display: none;
+  }
+}
+
+.chose{
+  position: absolute;
+  top: 140px;
+  left: -140px;
+  color: #adaeb2;
+  font-size: 9pt;
+  @media (--lg) {
+    display: none;
+  }
+}
+
+.circle {
+  width: 7px;
+  height: 7px;
+  background: #d6fa3b;
+  -moz-border-radius: 3.5px;
+  -webkit-border-radius: 3.5px;
+  border-radius: 3.5px;
+}
+
+.circle:hover {
+  box-shadow: 0 0 10px #d6fa3b;
+}
+
+.circleDisabled {
+  width: 7px;
+  height: 7px;
+  background: gray;
+  -moz-border-radius: 3.5px;
+  -webkit-border-radius: 3.5px;
+  border-radius: 3.5px;
+}
+
+.circleDisabled:hover {
+  box-shadow: 0 0 10px #d6fa3b;
+  background: #d6fa3b;
+}
+
+.craftRow{
+  position: absolute;
+  margin-top: auto;
+  margin-left: 8%;
+}
+
+#craft {
+  height: 130px;
+} 
+
+.links{
+  color: #4e80c5;
+}
+
+.links:hover{
+  color: #d6fa3b;
+}
+
+#mult{
+  height: 430px;
+}
+
+.different{
+  line-height: 140%;
+}
+
+.check{
+  position: relaitve;
+  margin-left: 8.8%;
+}
+
+.green{
+  color: #d6fa3b;
+}
+
+.space{
+  margin-top: 0.5%;
+}
+
+.tools{
+  margin-left: 4%;
+}
+
+.svg{
+  filter: invert(.7);
+  height: 40%;
+  margin-right: 0%;
+}
+
+.long{
+  width: 70%;
+}
+
+.logos{
+  margin-left: 7%;
+}
+
+#bioware{
+  margin-top: 5%;
+  height: 18%;
+}
+
+#blizzard{
+  height: 30%;
+}
+
+#bungie{
+  margin-left: 1%;
+  height: 20%;
+}
+
+.logos4{
+  margin-left: 7%;
+  margin-top: -3.5%;
+}
+
+#mojang{
+  height: 10%;
+}
+
+#epic{
+  margin-top: -8%;
+  height: 40%;
+}
+
+#insomniac{
+  margin-left: 1%;
+  height: 15%;
+}
+
+.incript{
+  margin-top: -4%;
+}
+
+.column{
+  margin-right: 5%;
+}
+
+.sec{
+  margin-left: 5%;
+}
+
+.namesup{
+  margin-top: -2%;
+}
+
+.namesdown{
+  margin-top: 2%;
+}
+
+#beam{
+  position: relative;
+  top:-600px;
+  left: -100px;
+  width: 800px;
+  z-index: 0;
+  @media (--sm) {
+    display: none;
+  }
+}
+
+#chel{
+  position: relative;
+  top: -530px;
+  left: -692px;
+  width: 400px;
+}
+
+.touchCol{
+  position: relative;
+  margin-left: 38.8%;
+  @media (--lg) {
+    margin-left: 40%;
+  }
+  @media (--md) {
+    margin-left: 50%;
+  }
+  @media (--sm) {
+    margin-left: 20%;
+  }
+  z-index: 2;
+}
+
+.commentsCol{
+  margin-left: 58.8%;
+  @media (--lg) {
+    margin-left: 60%;
+  }
+  @media (--md) {
+    margin-left: 68%;
+  }
+  @media (--sm) {
+    margin-left: 47%;
+  }
+}
+
+.touchRow{
+  position: relative;
+  top: 100px;
+  font-family: sans-serif;
+  font-size: 28pt;
+  font-weight: bold;
+}
+
+.directRow{
+  position: relative;
+  color: black;
+  top: 120px;
+}
+
+.input{
+  position: relative;
+  top: 140px;
+  width: 29%;
+  height: 32px;
+  border: solid #adaeb2 0.6px;
+  color: gray;
+}
+
+.mail{
+  top: 160px;
+}
+
+.select{
+  top: 180px;
+  color: gray;
+  background: white;
+}
+
+.submit{
+  top: 220px;
+  width: 120px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background: #61a2f4;
+}
+
+.meet{
+  top: 270px;
+  font-size: 16pt;
+}
+
+.fancy{
+  top: 290px;
+}
+
+.comments{
+  top: -107px;
+  height: 140px;
+  width: 50%;
+}

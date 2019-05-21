@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var card1 = {
+            enabled: false
+        };
+        var card2 = {
+            enabled: false
+        };
+        var card3 = {
+            enabled: false
+        };
+        var card4 = {
+            enabled: false
+        };
+
+        var cards = [card1, card2, card3, card4];
+        var counter = 0;
+        function select(n){
+            for (let i = 0; i < cards.length; i++){
+                if (i !== n-1){
+                   cards[i].enabled = true;
+                }
+            }
+            enable1();
+            enable2();
+            enable3();
+            enable4();
+            counter++;
+        }
+
+        function mouseOn(n){
+            var text;
+            if (n === 1){
+                text = "<div class=\"wt-row wt-offset-top-48 wt-row_size_s\"><div class=\"wt-col-12 desc\">For games on Unity®:</div></div><div class=\"wt-row wt-offset-top-24 wt-row_size_m\"><div class=\"wt-col desc\"><img src=\"app/static/img/logos/Resharper.png\" id=\"Resharper\"></div><div class=\"wt-col-2\"><div class=\"wt-row wt-offset-top-6 det\">ReSharper</div><div class=\"wt-row wt-offset-top-6 details\">a productivity mining extension <br> for Visual Studio.</div></div><div class=\"wt-col sec\"><img src=\"app/static/img/logos/Rider.png\" id=\"Resharper\"></div><div class=\"wt-col-2\"><div class=\"wt-row wt-offset-top-6 det\">Rider</div><div class=\"wt-row wt-offset-top-6 details\">a cross-platform ?.NET IDE with C# and Unity support.</div></div></div>";
+            }
+            if (n === 2){
+                text = "<div class=\"wt-row wt-offset-top-48 wt-row_size_s\"><div class=\"wt-col-12 desc\">For games on Unreal® Engine:</div></div><div class=\"wt-row wt-offset-top-24 wt-row_size_m\"><div class=\"wt-col desc\"><img src=\"app/static/img/logos/CLion.png\" id=\"Resharper\"></div><div class=\"wt-col-2\"><div class=\"wt-row wt-offset-top-6 det\">CLion</div><div class=\"wt-row wt-offset-top-6 details\">a cross-platform <br> C/C++ IDE</div></div><div class=\"wt-col sec\"><img src=\"app/static/img/logos/Resharper++.png\" id=\"Resharper\"></div><div class=\"wt-col-3\"><div class=\"wt-row wt-offset-top-6 det\">ReSharper C++</div><div class=\"wt-row wt-offset-top-6 details\">a productivity extension achievement <br> for Visual Studio for C++</div></div></div>";
+            }
+            if (n === 3){
+                text = "<div class=\"wt-row wt-offset-top-48 wt-row_size_s\"><div class=\"wt-col-12 desc\">For mobile games:</div></div><div class=\"wt-row wt-offset-top-24 wt-row_size_m\"><div class=\"wt-col desc\"><img src=\"app/static/img/logos/IDEA.png\" id=\"Resharper\"></div><div class=\"wt-col-2\"><div class=\"wt-row wt-offset-top-6 det\">IntelliJ IDEA</div><div class=\"wt-row wt-offset-top-6 details\">for Android development, including Kotlin, an official Android supported language</div></div><div class=\"wt-col sec\"><img src=\"app/static/img/logos/AppCode.png\" id=\"Resharper\"></div><div class=\"wt-col-2\"><div class=\"wt-row wt-offset-top-6 det\">AppCode</div><div class=\"wt-row wt-offset-top-6 details\">for iOS/macOS development</div></div></div>";
+            }
+            if (n === 4){
+                text = "<div class=\"wt-row wt-offset-top-48 wt-row_size_s\"><div class=\"wt-col-12 desc\">For games on Web technologies:</div></div><div class=\"wt-row wt-offset-top-24 wt-row_size_m\"><div class=\"wt-col desc\"><img src=\"app/static/img/logos/Storm.png\" id=\"Resharper\"></div><div class=\"wt-col-3\"><div class=\"wt-row wt-offset-top-6 det\">WebStorm</div><div class=\"wt-row wt-offset-top-6 details\">a productivity extension achievement <br> for Visual Studio for C++</div></div></div>";
+            }
+            document.getElementById("description").innerHTML = text;
+        }
+        function back(){
+            var en = true;
+            for (let i = 0; i < cards.length; i++){
+                if (cards[i].enabled){
+                    en = false;
+                    var alpha = i;
+                }
+            }
+            if (en){
+                document.getElementById("description").innerHTML = "                <div class=\"wt-row wt-offset-top-96 wt-row_size_s\"> <div class=\"wt-col-5 disabledDesc\">From Activision to Zynga, cross-platform mobile <br> games to desktop franchises and consoles – <br> JetBrains tools help you quickly develop and <br> maintain games in easy difficulty.</div></div>";
+            }  
+
+            else {mouseOn(alpha+1);}  
+        }
+        function enable1(){
+            card1.enabled = !card1.enabled;
+            if (card1.enabled){
+                document.getElementById("card1").style = "width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_unity.svg) no-repeat 65% 40%,url(static/img/card/Unity_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;background-size: 70%, 18%, 17%;border: 1px #d6fa3b solid; box-shadow: 0 0 10px #d6fa3b;}@media (--lg) {margin-bottom: 20%;}"
+                mouseOn(1);
+            }
+            else{
+                document.getElementById("card1").style = "#card1 { width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_unity_disabled.svg) no-repeat 65% 40%, url(static/img/card/Unity.svg) no-repeat 5% 3%;background-size: 70%, 18%;border: 1px #696969 solid}#card1:hover {background: url(static/img/card/game_pers_unity.svg) no-repeat 65% 40%,url(static/img/card/Unity_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;background-size: 70%, 18%, 17%;border: 1px #d6fa3b solid;}@media (--lg) {margin-bottom: 20%;}"
+            }
+        }
+        function enable2(){
+            card2.enabled = !card2.enabled;
+            if (card2.enabled){
+                document.getElementById("card2").style = "width: 210px;height: 300px;border-radius: 10%; background: url(static/img/card/game_pers_unreal.svg) no-repeat 65% 50%,url(static/img/card/Unreal_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;background-size: 80%, 18%, 17%;border: 1px #d6fa3b solid; box-shadow: 0 0 10px #d6fa3b;@media (--lg) {margin-bottom: 20%;}"
+                mouseOn(2);
+            }
+            else{
+                document.getElementById("card2").style = "#card2 {width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_unreal_disabled.svg) no-repeat 65% 50%, url(static/img/card/Unreal.svg) no-repeat 5% 3%;background-size: 80%, 18%;border: 1px #696969 solid}#card2:hover {background: url(static/img/card/game_pers_unreal.svg) no-repeat 65% 50%,url(static/img/card/Unreal_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 90%;background-size: 80%, 18%, 17%;border: 1px #d6fa3b solid;}@media (--lg) {margin-bottom: 20%;}"
+            }
+        }
+        function enable3(){
+            card3.enabled = !card3.enabled;
+            if (card3.enabled){
+                document.getElementById("card3").style = "width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_mobile.svg) no-repeat 65% 40%, url(static/img/card/Mobile_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;background-size: 75%, 18%, 17%;border: 1px #d6fa3b solid; box-shadow: 0 0 10px #d6fa3b;"
+                mouseOn(3);
+            }
+            else{
+                document.getElementById("card3").style = "#card3 { width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_mobile_disabled.svg) no-repeat 65% 40%, url(static/img/card/Mobile.svg) no-repeat 5% 3%;background-size: 75%, 18%;border: 1px #696969 solid;}card3:hover {background: url(static/img/card/game_pers_mobile.svg) no-repeat 65% 40%, url(static/img/card/Mobile_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;background-size: 75%, 18%, 17%;border: 1px #d6fa3b solid;}"
+            }
+        }
+        function enable4(){
+            card4.enabled = !card4.enabled;
+            if (card4.enabled){
+                document.getElementById("card4").style = "width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_casual.svg) no-repeat 65% 45%,url(static/img/card/Casual_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;background-size: 75%, 18%, 17%;border: 1px #d6fa3b solid; box-shadow: 0 0 10px #d6fa3b;"
+                mouseOn(4);
+            }
+            else{
+                document.getElementById("card4").style = "#card4 {width: 210px;height: 300px;border-radius: 10%;background: url(static/img/card/game_pers_casual_disabled.svg) no-repeat 65% 45%, url(static/img/card/Casual.svg) no-repeat 5% 3%;background-size: 75%, 18%;border: 1px #696969 solid;#card4:hover {background: url(static/img/card/game_pers_casual.svg) no-repeat 65% 45%,url(static/img/card/Casual_selected.svg) no-repeat 5% 3%, url('static/img/card/Stats.svg') no-repeat 12% 95%;background-size: 75%, 18%, 17%;border: 1px #d6fa3b solid;}"
+            }
+        }
+        function scrollSecond(){
+            document.getElementById("Trusted").scrollIntoView();
+        }
+        function scrollFourth(){
+            document.getElementById("mult").scrollIntoView();
+        }
+        function scrollFifth(){
+            document.getElementById("Touch").scrollIntoView();
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wt-container main">
+        <div class="wt-section main">
+             <div class="wt-row">
+                <img src="app/static/img/GameChanging_Development_Tools.svg" class="headerImage">
+                <div class="wt-row wt-row_size_m trusted wt-row_wrap">
+                    <div class="wt-col headerLet" id="Trusted">
+                        Trusted by developers using
+                    </div>
+                    <div class="wt-col">
+                        <img src="app/static/img/UnityTextLogo.svg" class="headerLogo">
+                    </div>
+                    <div class="wt-col">
+                        <img src="app/static/img/UnrealTextLogo.svg" class="headerLogo">
+                    </div>
+                </div>
+            </div>
+            <div class="wt-row wt-offset-top-96 wt-row_size_s">
+                <div class="wt-col-5 unlock">
+                    Unlock the code quality achievement
+                </div>
+            </div>
+            <div class="wt-row wt-offset-top-24 wt-row_justify_start unlockRow ">
+                <div class="wt-col-3 wt-col_align-self_stretch unlockImg" id="code">
+                    <img src="app/static/img/Code_Analysis.svg">
+                    <div class="wt-row wt-offset-top-24 headerLet">
+                        Code Analysis
+                    </div>
+                   <div class="wt-row wt-offset-top-24 det">
+                        Write safer & more efficient code <br>
+                        with code analysis
+                    </div>
+                </div>
+                <div class="wt-col-3 unlockImg">
+                    <img src="app/static/img/Refactoring.svg" id="refactoring">
+                    <div class="wt-row wt-offset-top-24 headerLet ref">
+                        Refactoring
+                    </div>
+                    <div class="wt-row wt-offset-top-24 det">
+                        Refactor your code base with <br>
+                        point and click
+                    </div>
+                </div>
+                <div class="wt-col-3">
+                    <img src="app/static/img/Code_Generation.svg">
+                    <div class="wt-row wt-offset-top-24 headerLet gen">
+                        Code Generation
+                    </div>
+                    <div class="wt-row wt-offset-top-24 det">
+                       Avoid typing boilerplate code <br>
+                       with code generation.
+                    </div>
+                </div>
+            </div>
+            <div class="wt-row wt-offset-top-96 wt-row_size_s">
+                <div class="wt-col-4 unlock">
+                    Get an IDE 
+                    <br>
+                    to craft best games
+                </div>
+            </div>
+            <div class="wt-row wt-offset-top-24 wt-row_justify_start cardRow wt-row_align-items_center wt-row_size_l">
+                <div class="wt-col wt-col_align-self_stretch menu">
+                    <div class="wt-row wt-row_justify_center getRow">
+                        <div class="circle" onclick="window.scrollTo(0,0)"> </div>
+                    </div>
+                    <div class="wt-row wt-offset-top-48 wt-row_justify_center getRow">
+                        <div class="circle" onclick="scrollSecond()"> </div>
+                    </div>
+                    <div class="wt-row wt-offset-top-24 getRow wt-row_justify_center">
+                        <img src="app/static/img/Menu_Hero.svg">
+                    </div>
+                    <div class="wt-row wt-offset-top-24 wt-row_justify_center getRow">
+                        <div class="circleDisabled" onclick="scrollFourth()"> </div>
+                    </div>
+                    <div class="wt-row wt-offset-top-48 wt-row_justify_center getRow">
+                        <div class="circleDisabled" onclick="scrollFifth()"> </div>
+                    </div>
+                </div>
+                <div class="wt-col wt-col_align-self_stretch chose">
+                    Chose hero
+                </div>
+                <div class="wt-col wt-col_align-self_stretch">
+                    <div id="card1" onclick="select(1)" onmouseover="mouseOn(1)" onmouseout="back()"></div>
+                </div>
+                <div class="wt-col wt-col_align-self_stretch">
+                    <div id="card2" onclick="select(2)" onmouseover="mouseOn(2)" onmouseout="back()" ></div>
+                </div>
+               <div class="wt-col wt-col_align-self_stretch">
+                    <div id="card3" onclick="select(3)" onmouseover="mouseOn(3)" onmouseout="back()"></div>
+                </div>
+                <div class="wt-col wt-col_align-self_stretch">
+                    <div id="card4" onclick="select(4)" onmouseover="mouseOn(4)" onmouseout="back()"></div>
+                </div>
+            </div>
+            <div id="description">
+                <div class="wt-row wt-offset-top-96 wt-row_size_s">
+                    <div class="wt-col-5 disabledDesc">
+                        From Activision to Zynga, cross-platform mobile 
+                        <br>
+                        games to desktop franchises and consoles – 
+                        <br>
+                        JetBrains tools help you quickly develop and
+                        <br>
+                        maintain games in easy difficulty.
+                    </div>
+                </div> 
+            </div> 
+            <div class="wt-row wt-row_size_l getRow wt-offset-top-96">
+                <div class="wt-col wt-col_align-self_stretch">
+                    <img src="app/static/img/Craft_Games.svg" id="craft">
+                </div>    
+                <div class="wt-col-5 wt-col_align-self_stretch">
+                     <div class="wt-row wt-offset-top-24 headerLet different">
+                        Are you using something different <br>
+                        to craft your games?
+                     </div>
+                     <div class="wt-row wt-offset-top-24 det">
+                        We've got more options and products to meet your needs.
+                    </div>
+                    <div class="wt-row det">
+                        Filter and learn more&nbsp<div class="links">here</div>.
+                    </div>
+                </div>
+            </div> 
+            <div class="wt-row wt-row_size_l getRow wt-offset-top-96">
+                 <img src="app/static/img/Multiplayer_Teams.svg" id="mult">
+            </div>
+            <div class="wt-row wt-row_size_l wt-offset-top-48">
+                <div class="wt-col-6 disabledDesc">
+                    Track everything in one place, build and emulate <br>your games in many setups without having to do <br> any of the usual sidequests, so you can easily review <br> the code and make the process of creating glitchless <br> games in your company simpler.
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_l wt-offset-top-48 check headerLet">
+                Check out our team tools,
+            </div>
+            <div class="wt-row wt-row_size_l wt-offset-top-6 check headerLet space">
+                <div class="green">
+                    completely free&nbsp
+                </div>
+                for small teams
+            </div>
+            <div class="wt-row wt-offset-top-48 wt-row_size_m">
+                    <div class="wt-col desc">
+                        <img src="app/static/img/logos/YouTrack.png" id="Resharper">
+                    </div>
+                    <div class="wt-col-2">
+                        <div class="wt-row wt-offset-top-6 det">
+                            YouTrack
+                        </div>
+                        <div class="wt-row wt-offset-top-6 details">
+                            Continuous integration <br> & deployment
+                        </div>
+                    </div>
+                    <div class="wt-col desc tools">
+                        <img src="app/static/img/logos/TeamCity.png" id="Resharper">
+                    </div>
+                    <div class="wt-col-2">
+                        <div class="wt-row wt-offset-top-6 det">
+                            TeamCity
+                        </div>
+                        <div class="wt-row wt-offset-top-6 details">
+                           Continuous integration <br> & deployment
+                        </div>
+                    </div>
+                    <div class="wt-col desc tools">
+                        <img src="app/static/img/logos/UpSource.png" id="Resharper">
+                    </div>
+                    <div class="wt-col-2">
+                        <div class="wt-row wt-offset-top-6 det">
+                            UpSource
+                        </div>
+                        <div class="wt-row wt-offset-top-6 details">
+                           Project analytics <br> & code review
+                        </div>
+                    </div>
+             </div>
+             <div class="wt-row wt-row_size_l getRow wt-offset-top-96">
+                 <img src="app/static/img/Ask_Our_Customers.svg">
+            </div>
+             <div class="wt-row wt-row_size_l wt-offset-top-48">
+                <div class="wt-col-5 disabledDesc">
+                   4M+ developers from all over the open world trust <br>JetBrains tools and use them in their everyday jobs.
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m wt-offset-top-48 logos">
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/nintendo-mono.svg" class = "svg">
+                </div>
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/ubisoft-mono.svg" class = "svg">
+                </div>
+                <div class="wt-col-3">
+                  <img src="app/static/img/logos/naughtydog-mono.svg" class = "svg long">
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m wt-offset-top-24 logos">
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/valve.svg" class = "svg">
+                </div>
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/sega-mono.svg" class = "svg">
+                </div>
+                <div class="wt-col-3">
+                  <img src="app/static/img/logos/square-enix-mono.svg" class = "svg long">
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m wt-offset-top-24 logos">
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/blizzard-mono.svg" class = "svg" id="blizzard">
+                </div>
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/bioware-mono.svg" class = "svg" id="bioware">
+                </div>
+                <div class="wt-col-3">
+                  <img src="app/static/img/logos/bungie-mono.svg" class = "svg" id="bungie">
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m wt-offset-top-12 logos4">
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/mojang-mono.svg" class = "svg" id="mojang">
+                </div>
+                <div class="wt-col-3 column">
+                  <img src="app/static/img/logos/epic-games-mono.svg" class = "svg" id="epic">
+                </div>
+                <div class="wt-col-3">
+                  <img src="app/static/img/logos/insomniac-games-mono.svg" class = "svg" id="insomniac">
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m incript logos det">
+                <div class="wt-col-3 column">
+                    Using Rider to write C# makes me <br> happy. I have never seen code refactoring tools that actually work - always without exception. It’s amazing when you can rely on it.
+                </div>
+                <div class="wt-col-3 column">
+                    We use TeamCity to build games for various platforms, in parallel, multiple times per day. The value we receive from the product, and the support from the dev team, are fantastic!
+                </div>
+                <div class="wt-col-4">
+                    An IDE can make or break a developer’s <br> day. Both of these tools (CLion and <br> Rider) help our team on a daily basis, <br> allowing developers to perform their <br> tasks quickly and efficiently, all the while <br> seamlessly integrating with numerous <br> parts of our pipeline.
+                </div>
+            </div>
+            <div class="wt-row wt-row_size_m logos details">
+                <div class="wt-col-3 column namesup ">
+                    Joachim Ante,<br>
+                    Unity CTO & Founder
+                </div>
+                <div class="wt-col-3 column namesup">
+                    Oleg Gerovich,<br>
+                    Senior Software Engineer,<br> Wargaming Chicago-Baltimore
+                </div>
+                <div class="wt-col-4 namesdown">
+                    Matthew Davey, <br> dotBunny
+                </div>
+            </div>
+        </div>
+       <div class="wt-section getInTouch">
+            <div class="wt-col touchCol">
+                <div class="wt-row touchRow" id="Touch">
+                    Get in touch
+                </div>
+                <div class="wt-row directRow det">
+                    Direct-message our team with any <br> questions you have about the products:
+                </div>
+                <div>
+                    <input type="text" name="Name" placeholder="  Your Name" class="input det">
+                </div>
+                <div>
+                    <input type="text" name="Email" placeholder="  Your Email" class="input det mail">
+                </div>
+                <div>
+                    <select class="input det select">>
+                         <option default>Product</option>
+                         <option>Clion</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" name="button" value="Submit" class="input det submit">
+                </div>
+                <div class="wt-row touchRow meet">
+                    Meet us GDC
+                </div>
+                <div class="directRow fancy det">
+                    Fancy rushing our party? Meet us at <br>
+                    <div class="links">
+                        Game Developers Conference (GDC),
+                    </div>
+                    the world's largest professional game <br> industry event, and score some loot.
+                </div>
+            </div>
+            <div class="wt-col commentsCol">
+                <div>
+                    <input type="text" name="Comments" placeholder="  Comments" class=" input det comments">
+                </div>
+            </div>
+            <img src="app/static/img/assets/gd_bottom_beam.svg" id="beam">
+            <img src="app/static/img/assets/gd_connect_chel.svg" id="chel">
+        </div>          
+    </div> 
+</body>
+</html>
